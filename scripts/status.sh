@@ -2,15 +2,9 @@
 
 sep=$(printf "|")
 
-Cpu() {
-	usage=$(top -bn1 | grep Cpu | awk '{print $2}')
-	printf "$usage%%"
-}
+Cpu() { printf "$(top -bn1 | grep Cpu | awk '{print $2}')%%"; }
 
-Mem() {
-	used=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
-	printf "$used"
-}
+Mem() { printf "$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"; }
 
 Vol() {
 	vol=$(pamixer --get-volume-human)
@@ -21,15 +15,9 @@ Vol() {
 	fi
 }
 
-Time() {
-	time=$(date "+%H:%M")
-	printf "$time"
-}
+Time() { printf "$(date "+%H:%M")"; }
 
-Date() {
-	date=$(date "+%b %d")
-	printf "$date"
-}
+Date() { printf "$(date "+%a, %d %b")"; }
 
 while true; do
 	sleep 1 && xsetroot -name "$(Mem) $sep $(Cpu) $sep $(Vol) $sep $(Date) $(Time)"
