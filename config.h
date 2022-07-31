@@ -14,13 +14,13 @@ static const int user_bh            = 3;        /* 2 is the default spacing arou
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:style=Regular:size=10:autohint=true", "Noto Color Emoji:style=Regular:size=10:autohint=true" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10";
 static const char black[]   		    = "#151515";
-static const char gray[]  		      = "#424242";
-static const char white[]  		      = "#b2b2b2";
+static const char gray[]  		      = "#444444";
+static const char white[]  		      = "#E8E3E3";
 static const char magenta[] 	      = "#A988B0";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { white, black, gray },
-	[SchemeSel]  = { black, white, white },
+	[SchemeSel]  = { magenta, black, white },
 };
 
 /* tagging */
