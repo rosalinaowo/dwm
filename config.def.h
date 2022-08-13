@@ -89,7 +89,7 @@ static Key keys[] = {
 	{ MODKEY,					              XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,												XK_Escape, spawn,					 {.v = powermenu } },
 	{ MODKEY|ShiftMask,							XK_l,			 spawn,					 {.v = lock } },
-	{ Mod1Mask,											XK_space,	 spawn,					 SHCMD("switcher") },
+	{ Mod1Mask,											XK_space,	 spawn,					 SHCMD("$HOME/scripts/switcher") },
 	{ 0,														XK_Print,	 spawn,					 {.v = shot } },
 	{ MODKEY,												XK_w,			 spawn,					 {.v = web } },
 	{ 0,														XF86XK_AudioLowerVolume,	 spawn,	{.v = downvol} },

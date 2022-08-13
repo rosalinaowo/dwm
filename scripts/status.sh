@@ -19,6 +19,18 @@ Time() { printf "$(date "+%H:%M")"; }
 
 Date() { printf "$(date "+%a, %d %b")"; }
 
+: 'Battery() {
+	status=$(cat /sys/class/power_supply/BAT0/status)
+	capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+	if [ "$status" = "Full" ]; then
+		printf "$status"
+	elif [ "$status" = "Charging" ]; then
+		printf "$status $capacity%%"
+	else
+		printf "$status $capacity%%"
+	fi
+}'
+
 while true; do
 	sleep 1 && xsetroot -name "$(Mem) $sep $(Cpu) $sep $(Vol) $sep $(Date) $(Time)"
 done
